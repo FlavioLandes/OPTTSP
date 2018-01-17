@@ -51,5 +51,18 @@ public abstract class BaseHeuristics {
 		}
 	}
 	
-	
+	// Print the solution and its distance
+	public void printSolution() {
+		System.out.println();
+		System.out.println("Solution:");
+		System.out.println();
+		
+		System.out.print("0 -> ");
+		for(int i = 0; i < this.getSolution().size(); i++) {
+			System.out.print(this.getSolution().get(i) + " -> ");
+		}
+		System.out.println("0");
+		System.out.println();
+		System.out.println("Total distance: " + this.getValueFx());
+	}
 }

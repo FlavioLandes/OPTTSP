@@ -25,8 +25,7 @@ public class Main {
 		ils.execute();
 		
 		// Printing the solution to the terminal and its value when applied to the objective function
-		System.out.println(ils.getSolution());
-		System.out.println(ils.getValueFx());
+		ils.printSolution();
 	}
 
 }
