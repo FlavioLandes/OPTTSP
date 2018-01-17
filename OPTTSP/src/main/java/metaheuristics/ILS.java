@@ -32,20 +32,20 @@ public class ILS extends BaseHeuristics {
 	@Override
 	public void execute() {
 		ArrayList<Integer> solutionConstructive;
-		double fxConstructive;
 		ArrayList<Integer> solutionLocalSearch;
 		ArrayList<Integer> solutionPertubation;
 		double fxPertubation;
 		
-		this.constructiveHeuristic.execute();
+		if (this.constructiveHeuristic != null) {	// The condition used for metaheuristics can be used as a local search. That is, when to do Hibrization
+			this.constructiveHeuristic.execute();
+			
+			solutionConstructive = constructiveHeuristic.getSolution();
+			
+			this.updateSolution(solutionConstructive);
+		}
 		
-		solutionConstructive = constructiveHeuristic.getSolution();
-		fxConstructive = constructiveHeuristic.getValueFx();
-		
-		this.updateSolution(solutionConstructive);
-		
-		this.localSearch.setSolution(solutionConstructive);
-		this.localSearch.setValueFx(fxConstructive);
+		this.localSearch.setSolution(this.getSolution());
+		this.localSearch.setValueFx(this.getValueFx());
 		this.localSearch.execute();
 		
 		solutionLocalSearch = this.localSearch.getSolution();
