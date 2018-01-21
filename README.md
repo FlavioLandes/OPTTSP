@@ -11,7 +11,8 @@ Local Search heuristics:
 * Random Descent Method.
 
 Metaheuristics: 
-* Iterated Local Search.
+* Iterated Local Search;
+* GRASP (Greedy Randomized Adaptive Search Procedure).
 
 # Usage
 The OPTTSP framework allows to use the heuristics and metaheuristics already implemented, as well as to implement new heuristics and metaheuristics.
