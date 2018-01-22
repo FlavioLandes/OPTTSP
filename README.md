@@ -16,7 +16,7 @@ Metaheuristics:
 
 # Usage
 The OPTTSP framework allows to use the heuristics and metaheuristics already implemented, as well as to implement new heuristics and metaheuristics.
-For more details, please look at the example package.
+For more details, please look at OPTTSP/src/main/java/example.
 
 # Author
 Flávio Barreiro Landes 
