@@ -3,16 +3,17 @@ OPTTSP is a Java framework for the use and implementation of heuristics and meta
 For use, it provides a set of implemented heuristics and meta-heuristics. Already for the implementation, it offers a whole structure to collaborate in this process.
 
 # Implemented methods
-Constructive heuristics: 
-* Random; 
-* Nearest Neighbor.
+Constructive heuristics:  
+* Nearest Neighbor;
+* Random.
 
 Local Search heuristics: 
 * Random Descent Method.
 
 Metaheuristics: 
 * Iterated Local Search;
-* GRASP (Greedy Randomized Adaptive Search Procedure).
+* GRASP (Greedy Randomized Adaptive Search Procedure);
+* Multi-Start.
 
 # Usage
 The OPTTSP framework allows to use the heuristics and metaheuristics already implemented, as well as to implement new heuristics and metaheuristics.
