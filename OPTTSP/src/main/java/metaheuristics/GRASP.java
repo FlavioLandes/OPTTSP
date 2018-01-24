@@ -29,20 +29,24 @@ public class GRASP extends BaseHeuristics {
 
 	@Override
 	public void execute() {
-		ArrayList<Integer> construtiveSolution;
-		double valueConstrutiveSolution;
+		ArrayList<Integer> constructiveSolution;
+		double valueConstructiveSolution;
 		
 		for (int i = 0; i < maxIterations; i++) {
 			
 			// Creating a greedy random solution
-			construtiveSolution = greedyRandomizedConstruction();
-			valueConstrutiveSolution = this.dataSet.calculateFx(construtiveSolution);
-			this.setSolution(construtiveSolution);
-			this.setValueFx(valueConstrutiveSolution);
+			constructiveSolution = greedyRandomizedConstruction();
+			valueConstructiveSolution = this.dataSet.calculateFx(constructiveSolution);
+			
+			// Checking whether to update the current solution with the constructive solution
+			if (valueConstructiveSolution < this.getValueFx()) {
+				this.setSolution(constructiveSolution);
+				this.setValueFx(valueConstructiveSolution);
+			}
 			
 			// Configuring Local Search and Running It
-			this.localSearch.setSolution(construtiveSolution);
-			this.localSearch.setValueFx(valueConstrutiveSolution);
+			this.localSearch.setSolution(constructiveSolution);
+			this.localSearch.setValueFx(valueConstructiveSolution);
 			this.localSearch.execute();
 			
 			
